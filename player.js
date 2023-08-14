@@ -1,24 +1,24 @@
 var url = "aamps://dash.akamaized.net/dash264/TestCasesMCA/dolby/3/1/ChID_voices_20_128_ddp.mpd";
-var player;
+    var player; // Declare the player variable
 
-window.onload = function() {
-    player = new AAMPMediaPlayer();
-}
-
-function loadAAMPVideo() {
-    var video = document.getElementById("video");
-    video.src = url;
-    video.play();
-    video.style.display = "block";
-}
-
-var playButton = document.getElementById("playButton");
-
-playButton.addEventListener("keydown", function(event) {
-    if (event.keyCode === 13) { // Enter key
-        loadAAMPVideo();
+    window.onload = function() {
+        player = new AAMPMediaPlayer();
     }
-});
+
+    function loadAAMPVideo() {
+        var video = document.getElementById("video");
+        video.src = url;
+        video.play();
+        video.style.display = "block";
+    }
+
+    document.addEventListener("keydown", function(event) {
+        if (event.keyCode === 13) { // Enter key
+            if (document.activeElement.id === "playButton") {
+                loadAAMPVideo();
+            }
+        }
+    });
 
 //  // Get references to the video element and the play button
 // const url = "https://dash.akamaized.net/dash264/TestCasesMCA/dolby/3/1/ChID_voices_20_128_ddp.mpd";
