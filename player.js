@@ -1,60 +1,80 @@
+var url = "aamps://dash.akamaized.net/dash264/TestCasesMCA/dolby/3/1/ChID_voices_20_128_ddp.mpd";
+var player;
 
-
- // Get references to the video element and the play button
-const url = "https://dash.akamaized.net/dash264/TestCasesMCA/dolby/3/1/ChID_voices_20_128_ddp.mpd";
-const player = new AAMPMediaPlayer();
- player.load(url);
- const videoPlayer = document.getElementById("videoPlayer");
- const playPauseButton = document.getElementById("playButton");
- const progressBar = document.getElementById('progress-bar');
-
- 
- 
-
- // player.initialize(videoPlayer, "https://dash.akamaized.net/dash264/TestCasesIOP33/multiplePeriods/4/manifest_multiple_Periods_Different_SegmentDuration.mpd", true);
-//// vishwas Code 
-playPauseButton.addEventListener('click', function() {
-   console.log('button is xyz');
-  togglePlayPause();
-  console.log('button is clicked');
-});
-
- 
-
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'Enter') {togglePlayPause();
-                               console.log(togglePlayPause(), 'button is Hitted');
-                             }
-
- 
-
-});
-
- 
-
-videoPlayer.addEventListener('timeupdate', function() {
-  var progress = (videoPlayer.currentTime / videoPlayer.duration) * 100;
-  progressBar.style.width = progress + '%';
-});
-
- 
-
-video.addEventListener('ended', function() {
-  playPauseButton.textContent = 'Play';
-  progressBar.style.width = '0';
-});
-
- 
-
-function togglePlayPause() {
-  if (videoPlayer.paused || videoPlayer.ended) {
-    videoPlayer.play();
-    playPauseButton.textContent = 'Pause';
-  } else {
-    videoPlayer.pause();
-    playPauseButton.textContent = 'Play';
-  }
+window.onload = function() {
+    player = new AAMPMediaPlayer();
 }
+
+function loadAAMPVideo() {
+    var video = document.getElementById("video");
+    video.src = url;
+    video.play();
+    video.style.display = "block";
+}
+
+var playButton = document.getElementById("playButton");
+
+playButton.addEventListener("keydown", function(event) {
+    if (event.keyCode === 13) { // Enter key
+        loadAAMPVideo();
+    }
+});
+
+//  // Get references to the video element and the play button
+// const url = "https://dash.akamaized.net/dash264/TestCasesMCA/dolby/3/1/ChID_voices_20_128_ddp.mpd";
+// const player = new AAMPMediaPlayer();
+//  player.load(url);
+//  const videoPlayer = document.getElementById("videoPlayer");
+//  const playPauseButton = document.getElementById("playButton");
+//  const progressBar = document.getElementById('progress-bar');
+
+ 
+ 
+
+//  // player.initialize(videoPlayer, "https://dash.akamaized.net/dash264/TestCasesIOP33/multiplePeriods/4/manifest_multiple_Periods_Different_SegmentDuration.mpd", true);
+// //// vishwas Code 
+// playPauseButton.addEventListener('click', function() {
+//    console.log('button is xyz');
+//   togglePlayPause();
+//   console.log('button is clicked');
+// });
+
+ 
+
+// document.addEventListener('keydown', function(event) {
+//   if (event.key === 'Enter') {togglePlayPause();
+//                                console.log(togglePlayPause(), 'button is Hitted');
+//                              }
+
+ 
+
+// });
+
+ 
+
+// videoPlayer.addEventListener('timeupdate', function() {
+//   var progress = (videoPlayer.currentTime / videoPlayer.duration) * 100;
+//   progressBar.style.width = progress + '%';
+// });
+
+ 
+
+// video.addEventListener('ended', function() {
+//   playPauseButton.textContent = 'Play';
+//   progressBar.style.width = '0';
+// });
+
+ 
+
+// function togglePlayPause() {
+//   if (videoPlayer.paused || videoPlayer.ended) {
+//     videoPlayer.play();
+//     playPauseButton.textContent = 'Pause';
+//   } else {
+//     videoPlayer.pause();
+//     playPauseButton.textContent = 'Play';
+//   }
+// }
 
 // vishwas coide ended
 
