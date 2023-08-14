@@ -18,6 +18,18 @@ body {
     border: 1px solid #ccc;
     background-color: white;
 }
+.play-button {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   padding: 10px 20px;
+   background-color: #2195f303;
+   color: #ffffff2b;
+   font-size: 16px;
+   border: none;
+   cursor: pointer;
+}
 
 /* button {
     background-color: #007bff;
@@ -33,7 +45,7 @@ button:focus {
     border: 2px solid #007bff;
 }
 
-video {
+#video {
     max-width: 100%;
     height: auto;
     display: none;
@@ -206,6 +218,107 @@ video {
     margin-bottom: 20px;
     justify-content: space-between;
  }
+.title {
+    color: #fff;
+    opacity: 0.9;
+    padding-left: 4%;
+    text-transform: capitalize;
+    font-size: 22px;
+    font-weight: 500;
+ }
+
+ .movies-list {
+    width: 100%;
+    height: 220px;
+    position: relative;
+    margin: 10px 0 20px;
+ }
+
+ .card-container {
+    position: absolute;
+    width: 96%;
+    padding-left: 4%;
+    height: 220PX;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-behavior: smooth;
+ }
+
+ .card-container::-webkit-scrollbar {
+    display: none;
+ }
+
+ .card {
+    position: relative;
+    min-width: 150px;
+    width: 150px;
+    height: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-left: 10px;
+    transition: .5s;
+    background: #000;
+ }
+ .card:hover {
+    transform: scale(1.1);
+ }
+ .card:hover .card-body {
+    opacity: 1;
+ }
+
+ .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+ }
+
+ .card-body {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: linear-gradient(to bottom, rgba(4, 8, 15, 0), #192133 90%);
+    padding: 10px;
+    transition: 0.5s;
+ }
+
+ .name {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-top: 60%;
+ }
+
+ .des {
+    color: #fff;
+    opacity: 0.8;
+    margin: 5px 0;
+    font-weight: 500;
+    font-size: 12px;
+ }
+
+ .watchlist-btn {
+    position: relative;
+    width: 100%;
+    text-transform: capitalize;
+    background: none;
+    border: none;
+    font-weight: 500;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 5px 0;
+    cursor: pointer;
+    padding: 10px 5px;
+    border-radius: 5px;
+ }
+
 /*  * {
     padding: 0;
     margin: 0;
