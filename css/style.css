@@ -12,6 +12,22 @@ body {
     color: white;
     background-color: #000;
 }
+#container {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+button:focus {
+    outline: none;
+    border: 2px solid #007bff;
+}
+
+#video {
+    max-width: 100%;
+    height: auto;
+    display: none;
+}
 
 
 
